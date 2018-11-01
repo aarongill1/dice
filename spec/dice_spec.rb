@@ -20,4 +20,12 @@ describe Dice do
     multiple_dice = MultipleDice.new(dice1.roll, dice2.roll, dice3.roll)
     expect(multiple_dice.sum).to be_between(3,18)
   end
-end
+  it 'can see the result of the rolled dice as a system out' do
+    dice1 = Dice.new
+    dice1result = dice1.roll
+    dice2 = Dice.new
+    dice2result = dice2.roll
+    multiple_dice = MultipleDice.new(dice1result, dice2result)
+      expect{ multiple_dice.sum }.to output("The sum of the dice rolled is #{dice1result + dice2result}").to_stdout
+    end
+  end

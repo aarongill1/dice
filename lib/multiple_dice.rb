@@ -12,7 +12,7 @@ def sum
   @dice_array.each do |x|
     result += x
 end
+print "The sum of the dice rolled is #{result}"
 return result
 end
-
 end
